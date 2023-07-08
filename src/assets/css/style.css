@@ -1,20 +1,18 @@
-.bigBox {
+/*.bigBox {
   display: flexbox;
-}
+}*/
 .logo-Styling {
-  width: 64;
-  height: 64;
+  width: 110pt;
+  height: 110pt;
   fill: none;
 }
 /* navbar */
 .nav {
   overflow: hidden;
-  background-color: #dbd7d7;
+  background-color: #1f1e1e;
   display: flex;
+  flex-direction: row;
   justify-items: center;
-}
-
-.nav {
   float: left;
   color: #f2f2f2;
   text-align: center;

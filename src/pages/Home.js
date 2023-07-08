@@ -10,31 +10,28 @@ const Home = () => {
   return (
     <div>
       <div class="bg-image img1">
-        <img
-          src={BeefAndPepperStirFry.jpg}
-          alt="BeefAndPepperStirFryImage"
-        ></img>
+        <img src={BeefAndPepperStirFry} alt="BeefAndPepperStirFryImage"></img>
       </div>
       <div class="bg-image img2">
-        <img src={Shakshuka.jpg} alt="ShakshukaImage"></img>
+        <img src={Shakshuka} alt="ShakshukaImage"></img>
       </div>
       <div class="bg-image img3">
         <img
-          src={EasySpaghettiBolognese.jpg}
+          src={EasySpaghettiBolognese}
           alt="EasySpaghettiBologneseImage"
         ></img>
       </div>
       <div class="bg-image img4">
         <img
-          src={AirFryerCrispyChickenBurger.jpg}
+          src={AirFryerCrispyChickenBurger}
           alt="AirFryerCrispyChickenBurgerImage"
         ></img>
       </div>
       <div class="bg-image img5">
-        <img src={BakedSweetPotato.jpg} alt="BakedSweetPotatoImage"></img>
+        <img src={BakedSweetPotato} alt="BakedSweetPotatoImage"></img>
       </div>
       <div class="bg-image img6">
-        <img src={ChickpeaFattoush.jpg} alt="ChickpeaFattoushImage"></img>
+        <img src={ChickpeaFattoush} alt="ChickpeaFattoushImage"></img>
       </div>
       <br />
       <div class="bg-text">

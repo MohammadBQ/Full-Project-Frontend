@@ -14,10 +14,10 @@ const Navbar = () => {
 
   return (
     <div className="bigBox">
-      <div>
+      <div className="nav">
         <div>
           <nav>
-            <img src={ANM.png} alt="LogoImage" className="logo-Styling" />
+            <img src={ANM} alt="LogoImage" className="logo-Styling" />
           </nav>
         </div>
         <div>
@@ -45,7 +45,7 @@ const Navbar = () => {
               <div>Signin</div>
             </NavLink>
             <NavLink>
-              <div>signup</div>
+              <div>Signup</div>
             </NavLink>
           </div>
           {/* )} */}
