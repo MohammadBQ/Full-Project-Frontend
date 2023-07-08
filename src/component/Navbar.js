@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink, useInRouterContext } from "react-router-dom";
-import ANM from "../../src/assets/images/ANM.png";
+//import ANM from "../../src/assets/images/ANM.png";
 import "../assets/css/style.css";
 import Home from "../pages/Home";
 
@@ -15,23 +15,23 @@ const Navbar = () => {
   return (
     <div className="bigBox">
       <div className="nav">
-        <div>
+        {/* <div>
           <nav>
             <img src={ANM} alt="LogoImage" className="logo-Styling" />
           </nav>
-        </div>
+        </div> */}
         <div>
           <NavLink to="/">
             <div>Home</div>
           </NavLink>
-          <NavLink to="/Recipes">
+          <NavLink to="/recipes">
             <div>All Recipes</div>
           </NavLink>
-          <NavLink to="/Shows">
+          <NavLink to="/shows">
             <div>Shows</div>
           </NavLink>
-          <NavLink to="/Chefs">
-            <div>Chefs</div>
+          <NavLink to="/about">
+            <div>About</div>
           </NavLink>
           {/* {user ? (
             <button onClick={handleSignout}>
@@ -41,7 +41,7 @@ const Navbar = () => {
             </button>
           ) : ( */}
           <div>
-            <NavLink to="/Signin">
+            <NavLink to="/signin">
               <div>Signin</div>
             </NavLink>
             <NavLink>
