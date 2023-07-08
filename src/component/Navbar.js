@@ -5,12 +5,12 @@ import "../assets/css/style.css";
 import Home from "../component/Home";
 
 const Navbar = () => {
-  const [user, setUser] = useContext(UserContext);
+  // const [user, setUser] = useContext(UserContext);
 
-  const handleSignout = () => {
-    Signout();
-    setUser(false);
-  };
+  // const handleSignout = () => {
+  //   Signout();
+  //   setUser(false);
+  // };
 
   return (
     <div className="bigBox">
@@ -33,22 +33,22 @@ const Navbar = () => {
           <NavLink to="/Chefs">
             <div>Chefs</div>
           </NavLink>
-          {user ? (
+          {/* {user ? (
             <button onClick={handleSignout}>
-              <NavLink to="/sigin">
-                <div>sigout</div>
+              <NavLink to="/Signin">
+                <div>Signout</div>
               </NavLink>
             </button>
-          ) : (
-            <div>
-              <NavLink to="/signin">
-                <div>signin</div>
-              </NavLink>
-              <NavLink>
-                <div>signup</div>
-              </NavLink>
-            </div>
-          )}
+          ) : ( */}
+          <div>
+            <NavLink to="/Signin">
+              <div>Signin</div>
+            </NavLink>
+            <NavLink>
+              <div>signup</div>
+            </NavLink>
+          </div>
+          {/* )} */}
         </div>
       </div>
     </div>
