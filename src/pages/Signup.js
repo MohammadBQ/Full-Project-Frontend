@@ -1,9 +1,9 @@
-// import React from "react";
+import React from "react";
 
-// export const Register = () => {
-//   return (
-//   <div>
-//     <div class="container">
+const Signup = () => {
+  return (
+    <div>
+      {/* //     <div class="container">
 //   <form action="/action_page.php">
 //   <div class="row">
 //     <div class="col-25">
@@ -45,9 +45,10 @@
 //   <div class="row">
 //     <input type="submit" value="Submit">
 //   </div>
-//   </form>
-// </div>
+//   </form>npm install react-youtube
+// </div> */}
+    </div>
+  );
+};
 
-//   </div>;
-//   )
-// };
+export default Signup;

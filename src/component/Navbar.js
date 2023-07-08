@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { NavLink, useInRouterContext } from "react-router-dom";
 import ANM from "../../src/assets/images/ANM.png";
 import "../assets/css/style.css";
-import Home from "../component/Home";
+import Home from "../pages/Home";
 
 const Navbar = () => {
   // const [user, setUser] = useContext(UserContext);
