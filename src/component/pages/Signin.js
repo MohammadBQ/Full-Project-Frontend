@@ -1,7 +1,13 @@
 import React, { useContext, useState } from "react";
+<<<<<<< HEAD
 import { signin } from "../api/auth";
 import { useMutation } from "@tanstack/react-query";
 import UserContext from "../components/context/UserContext";
+=======
+import { signin } from "../../api/user";
+import { useMutation } from "@tanstack/react-query";
+import UserContext from "../context/userContext";
+>>>>>>> origin/main
 
 const Signin = () => {
   const [userInfo, setUserInfo] = useState({});
@@ -14,11 +20,19 @@ const Signin = () => {
 
   const { mutate: SiginFun } = useMutation({
     mutationFn: () => signin(userInfo),
+<<<<<<< HEAD
     onSuccess: (data) => {
       setUser(true);
     },
   });
 
+=======
+    onSuccess: () => {
+      setUser(true);
+    },
+  });
+  // any edit
+>>>>>>> origin/main
   const handleFormSubmit = (e) => {
     e.preventDefault();
     SiginFun();
