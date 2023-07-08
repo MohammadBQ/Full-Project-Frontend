@@ -13,11 +13,8 @@ const signin = async (userInfo) => {
 
 const signup = async (userInfo) => {
   try {
-    const formData = new FormData();
-    for (const key in userInfo) formData.append(key, userInfo[key]);
-    const { data } = await instance.post("api/user/signup", formData);
-
-    storeToken(data.access);
+    const { data } = await instance.post("api/user/signup", userInfo);
+    storeToken(data.token);
     return data;
   } catch (error) {
     console.log(error);

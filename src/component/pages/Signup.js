@@ -1,28 +1,28 @@
 import React, { useContext, useState } from "react";
 import { signup } from "../../api/user";
 import { useMutation } from "@tanstack/react-query";
-// import UserContext from "../components/context/UserContext";
+import UserContext from "../context/userContext";
 
 const Signup = () => {
   const [userInfo, setUserInfo] = useState({});
-  // const [user, setUser] = useContext(UserContext);
 
   const handleChange = (e) => {
-    if (e.target.name === "image") {
-      setUserInfo({ ...userInfo, [e.target.name]: e.target.files[0] });
-    } else {
+    {
       setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
     }
   };
 
+  const [user, setUser] = useContext(UserContext);
   const { mutate: signupFun } = useMutation({
     signupFun: () => signup(userInfo),
+    onSuccess: (data) => {
+      setUser(true);
+    },
   });
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     signupFun();
-    // Add register logic here
   };
 
   return (
@@ -97,6 +97,7 @@ const Signup = () => {
             <button
               type="submit"
               className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+              onClick={handleFormSubmit}
             >
               Register
             </button>
