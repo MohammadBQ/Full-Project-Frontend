@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
-import { signin } from "../api/auth";
+import { signin } from "../../api/user";
 import { useMutation } from "@tanstack/react-query";
-import UserContext from "../components/context/UserContext";
+import UserContext from "../context/userContext";
 
 const Signin = () => {
   const [userInfo, setUserInfo] = useState({});
