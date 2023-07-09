@@ -13,7 +13,7 @@ const signin = async (userInfo) => {
 
 const signup = async (userInfo) => {
   try {
-    const { data } = await instance.post("api/user/signup", userInfo);
+    const { data } = await instance.post("user/signup", userInfo);
     storeToken(data.token);
     return data;
   } catch (error) {

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-// import UserContext from "./context/UserContext";
+import UserContext from "./context/userContext";
 
 const Navbar = () => {
-  // const [user, setUser] = useContext(UserContext);
-
+  const [user, setUser] = useContext(UserContext);
+  // user ? <></> : <></>
   return (
     <nav className="bg-orange-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,9 +30,6 @@ const Navbar = () => {
               >
                 Recipes
               </NavLink>
-              {/* {user ? (
-                <button>signout</button>
-              ) : ( */}
               <>
                 <NavLink
                   to="/categories"
@@ -40,18 +37,30 @@ const Navbar = () => {
                 >
                   Categories
                 </NavLink>
-                <NavLink
-                  to="/signup"
-                  className="text-gray-300 hover:bg-yellow-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Signup
-                </NavLink>
-                <NavLink
-                  to="/signin"
-                  className="text-gray-300 hover:bg-yellow-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Signin
-                </NavLink>
+
+                {user ? (
+                  <NavLink
+                    to="/"
+                    className="text-gray-300 hover:bg-yellow-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Signout
+                  </NavLink>
+                ) : (
+                  <>
+                    <NavLink
+                      to="/signup"
+                      className="text-gray-300 hover:bg-yellow-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Signup
+                    </NavLink>
+                    <NavLink
+                      to="/signin"
+                      className="text-gray-300 hover:bg-yellow-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      Signin
+                    </NavLink>
+                  </>
+                )}
               </>
             </div>
           </div>

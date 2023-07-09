@@ -1,17 +1,13 @@
 import React, { useContext, useState } from "react";
-<<<<<<< HEAD
-import { signin } from "../api/auth";
-import { useMutation } from "@tanstack/react-query";
-import UserContext from "../components/context/UserContext";
-=======
 import { signin } from "../../api/user";
 import { useMutation } from "@tanstack/react-query";
 import UserContext from "../context/userContext";
->>>>>>> origin/main
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const [userInfo, setUserInfo] = useState({});
 
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setUserInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -20,23 +16,20 @@ const Signin = () => {
 
   const { mutate: SiginFun } = useMutation({
     mutationFn: () => signin(userInfo),
-<<<<<<< HEAD
-    onSuccess: (data) => {
-      setUser(true);
+    onSuccess: () => {
+      if (localStorage.getItem("token")) {
+        setUser(true);
+        navigate("/");
+      } else {
+        setUser(false);
+        alert("The Username or Password is wrong");
+      }
     },
   });
 
-=======
-    onSuccess: () => {
-      setUser(true);
-    },
-  });
-  // any edit
->>>>>>> origin/main
   const handleFormSubmit = (e) => {
     e.preventDefault();
     SiginFun();
-    // Add login logic here
   };
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center absolute inset-0 z-[-1]">
@@ -78,7 +71,7 @@ const Signin = () => {
               type="submit"
               className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
             >
-              Login
+              Signin
             </button>
           </div>
         </form>
