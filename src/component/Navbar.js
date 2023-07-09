@@ -1,10 +1,15 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import UserContext from "./context/userContext";
+import { signout } from "../api/user";
 
 const Navbar = () => {
   const [user, setUser] = useContext(UserContext);
-  // user ? <></> : <></>
+
+  const handleLogout = () => {
+    signout();
+    setUser(false);
+  };
   return (
     <nav className="bg-orange-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,12 +44,13 @@ const Navbar = () => {
                 </NavLink>
 
                 {user ? (
-                  <NavLink
+                  <div
+                    onClick={handleLogout}
                     to="/"
                     className="text-gray-300 hover:bg-yellow-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Signout
-                  </NavLink>
+                  </div>
                 ) : (
                   <>
                     <NavLink

@@ -12,13 +12,14 @@ const Signup = () => {
 
   const handleChange = (e) => {
     {
+      console.log(e.target.value);
       setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
     }
   };
   const [user, setUser] = useContext(UserContext);
 
   const { mutate: signupFun } = useMutation({
-    mutationFn: () => signup(userInfo),
+    mutationFn: (userInfo) => signup(userInfo),
     onSuccess: () => {
       if (localStorage.getItem("token")) {
         setUser(true);
