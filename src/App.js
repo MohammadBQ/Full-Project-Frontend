@@ -9,6 +9,7 @@ import Signout from "./pages/Signout";
 import Users from "./pages/Users";
 
 import { Route, Routes } from "react-router-dom";
+import RecipeCard from "./component/RecipeCard";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/recipe" element={<RecipeCard />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signout" element={<Signout />} />
