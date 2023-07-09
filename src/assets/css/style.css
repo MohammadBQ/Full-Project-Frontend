@@ -1,6 +1,7 @@
 /*.bigBox {
   display: flexbox;
 }*/
+
 .logo-Styling {
   width: 110pt;
   height: 110pt;
@@ -15,10 +16,20 @@
   background-color: #faf7f7;
 }
 
+body,
+html {
+  height: 100%;
+  background-color: black;
+}
 .aboutImg {
-  background-size: cover;
+  /* Full height */
+  height: 100%;
+  widht: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
   background-repeat: no-repeat;
-  margin-top: 80pt;
+  background-size: cover;
+  margin: 80pt 80pt 80pt 150pt;
 }
 
 .title {
