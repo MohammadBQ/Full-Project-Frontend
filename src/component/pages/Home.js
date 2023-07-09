@@ -1,10 +1,10 @@
 import React from "react";
-import BeefAndPepperStirFry from "../assets/images/BeefAndPepperStirFry.jpg";
-import Shakshuka from "../assets/images/Shakshuka.jpg";
-import EasySpaghettiBolognese from "../assets/images/EasySpaghettiBolognese.jpg";
-import AirFryerCrispyChickenBurger from "../assets/images/AirFryerCrispyChickenBurger.jpg";
-import BakedSweetPotato from "../assets/images/BakedSweetPotato.jpg";
-import ChickpeaFattoush from "../assets/images/ChickpeaFattoush.jpg";
+import BeefAndPepperStirFry from "../../assets/images/BeefAndPepperStirFry.jpg";
+import Shakshuka from "../../assets/images/Shakshuka.jpg";
+import EasySpaghettiBolognese from "../../assets/images/EasySpaghettiBolognese.jpg";
+import AirFryerCrispyChickenBurger from "../../assets/images/AirFryerCrispyChickenBurger.jpg";
+import BakedSweetPotato from "../../assets/images/BakedSweetPotato.jpg";
+import ChickpeaFattoush from "../../assets/images/ChickpeaFattoush.jpg";
 
 const Home = () => {
   return (
