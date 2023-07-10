@@ -13,6 +13,7 @@ const signin = async (userInfo) => {
 
 const signup = async (userInfo) => {
   try {
+    console.log(userInfo);
     const { data } = await instance.post("/user/signup", userInfo);
     storeToken(data.token);
     return data;
