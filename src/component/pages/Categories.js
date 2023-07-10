@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { categories } from "../../api/categories";
-// import { CategoryList } from "../../component/CategoryList";
+import CategoryList from "../../component/CategoryList";
 
 const Categories = () => {
   return (
@@ -11,7 +11,7 @@ const Categories = () => {
         <option value="categories"></option>
       </select>
 
-      {/* <CategoryList /> */}
+      <CategoryList />
 
       <div className="btn">
         <button>

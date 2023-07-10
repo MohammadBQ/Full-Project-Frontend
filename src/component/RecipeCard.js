@@ -2,14 +2,17 @@ import React from "react";
 // import "../../src/assets/css";
 // import "../../src/assets/images";
 import { deleteRecipe } from "../api/recipes";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 const RecipeCard = ({ recipe }) => {
+  const queryClient = useQueryClient();
+
   const {
     mutate: deleteTheRecipe,
     isLoading,
     error,
   } = useMutation({
     mutationFn: () => deleteRecipe(recipe.id),
+    onSuccess: queryClient.invalidateQueries(["recipes"]),
   });
 
   const handleDelete = () => {
