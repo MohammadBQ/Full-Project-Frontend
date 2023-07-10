@@ -1,10 +1,10 @@
 import React from "react";
-import About from "../assets/images/About.jpg";
+import aboutImage from "../../assets/images/aboutImage.jpg";
 
 const About = () => {
   return (
-    <div className="aboutImg">
-      <img src={About} alt="aboutImage" />
+    <div className="bg-cover bg-center">
+      <img src={aboutImage} alt="aboutImage" />
     </div>
   );
 };
