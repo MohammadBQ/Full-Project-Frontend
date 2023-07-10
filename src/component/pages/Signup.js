@@ -19,11 +19,14 @@ const Signup = () => {
   const [user, setUser] = useContext(UserContext);
 
   const { mutate: signupFun } = useMutation({
-    mutationFn: (userInfo) => signup(userInfo),
+    mutationFn: () => signup(userInfo),
     onSuccess: () => {
       if (localStorage.getItem("token")) {
         setUser(true);
         navigate("/");
+      } else {
+        setUser(false);
+        alert("Password Is Not Match");
       }
     },
   });
@@ -86,15 +89,15 @@ const Signup = () => {
               required
             />
             <label
-              htmlFor="password"
+              htmlFor="confirmpassword"
               className="block text-white text-sm font-medium mb-2"
             >
               Confirm Password
             </label>
             <input
               type="password"
-              id="password"
-              name="password"
+              id="confirmpassword"
+              name="confirmpassword"
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
