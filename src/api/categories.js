@@ -14,17 +14,25 @@ const getCategory = async (id) => {
 //to update my backend my input will be name, type, image,adopted as given from the
 //backend developer(in example: table) and the response will contain also the object that will be updated
 
-const addCategory = async (name) => {
-  const response = await instance.post("categories", {
-    name: name,
-  });
+const addCategory = async (category) => {
+  const FormData = new FormData();
+  for (const key in category) FormData.append(key, category[key]);
+
+  const response = await instance.post(`categories/`, FormData);
   return response.data;
 };
 
-const updateCategory = async (categoryId, name) => {
-  await instance.put(`categories/${category.id}`, {
+const updateCategory = async (categoryId, name, categoryImage) => {
+  const category = {
     name: name,
-  });
+    categoryImage: categoryImage,
+  };
+
+  const FormData = new FormData();
+  for (const key in category) FormData.append(key, category[key]);
+
+  const response = await instance.put(`categories/${category.id}`, FormData);
+  return response.data;
 };
 
 const deleteCategory = async (categoryId) => {
