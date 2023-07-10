@@ -2,13 +2,13 @@ import instance from "../api/index";
 
 // getting all the categories  -- get("categories") endpoint === categoriesList
 const getCategories = async () => {
-  const categories = await instance.get("categories"); // "categories"npmm
+  const categories = await instance.get("/categories"); // "categories"npmm
   return categories;
 };
 
 // getCategory by Id
 const getCategory = async (id) => {
-  const response = await instance.get(`categories/${id}`);
+  const response = await instance.get(`/categories/${id}`);
   return response.data;
 };
 //to update my backend my input will be name, type, image,adopted as given from the
@@ -18,7 +18,7 @@ const addCategory = async (category) => {
   const FormData = new FormData();
   for (const key in category) FormData.append(key, category[key]);
 
-  const response = await instance.post(`categories/`, FormData);
+  const response = await instance.post(`/categories/`, FormData);
   return response.data;
 };
 
@@ -31,12 +31,13 @@ const updateCategory = async (categoryId, name, categoryImage) => {
   const FormData = new FormData();
   for (const key in category) FormData.append(key, category[key]);
 
-  const response = await instance.put(`categories/${category.id}`, FormData);
+  const response = await instance.put(`/categories/${category.id}`, FormData);
   return response.data;
 };
 
 const deleteCategory = async (categoryId) => {
-  const response = await instance.delete(`/categories/${category.id}`);
+  const response = await instance.delete(`/categories/${categoryId}`);
+  response.data;
 };
 
 export {

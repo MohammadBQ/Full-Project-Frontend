@@ -5,7 +5,7 @@ import About from "./component/pages/About";
 import Categories from "./component/pages/Categories";
 import Recipes from "./component/pages/Recipes";
 import Navbar from "./component/Navbar";
-
+import RecipeDetails from "./component/RecipeDetails";
 import Signup from "./component/pages/Signup";
 import UserSignin from "./component/pages/Signin";
 import UserContext from "./component/context/userContext";
@@ -21,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/recipes" element={<Recipes />} />
+          <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
           <Route path="/signin" element={<UserSignin />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/signup" element={<Signup />} />
