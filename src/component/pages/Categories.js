@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { categories } from "../../api/categories";
+import CategoryCard from "../CategoryCard";
 import CategoryList from "../../component/CategoryList";
-import { Link } from "react-router-dom";
-import Modal from "../Modal";
+// import { Link } from "react-router-dom";
+// import Modal from "../Modal";
+import AddCategoryModal from "../AddCategoryModal";
 // import {user} from "../../api/user";
 
 const Categories = () => {
-  const [showModal, setShowModal] = useState(true);
+  // const [showModal, setShowModal] = useState(true);
   const handleShowModal = () => {
     setShowModal(true);
   };
@@ -17,6 +19,10 @@ const Categories = () => {
   //     console.log("picture: ", picture);
   //     setPicture(e.target.files[0]);
   //   };
+  const [showModal, setShowModal] = useState(false);
+  const onClose = () => setShowModal(false);
+  const onOpen = () => setShowModal(true);
+
   return (
     <div>
       <div>
@@ -49,7 +55,7 @@ const Categories = () => {
       </div>
       {/* add category Modal */}
       {/* <addCategoryModal show={showModal} onClose={onClose} onSave={() => {}} /> */}
-      <addCategoryModal show={showModal} onSave={() => {}} />
+      <addCategoryModal show={showModal} onClose={onClose} onSave={() => {}} />
       {/* ) : ( */}
       {/* <div>
         <h2>not authorize to add category</h2>
