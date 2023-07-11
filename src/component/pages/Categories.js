@@ -48,8 +48,8 @@ const Categories = () => {
         </button>
       </div>
       {/* add category Modal */}
-      <addCategoryModal show={showModal} onClose={onClose} onSave={() => {}} />
-
+      {/* <addCategoryModal show={showModal} onClose={onClose} onSave={() => {}} /> */}
+      <addCategoryModal show={showModal} onSave={() => {}} />
       {/* ) : ( */}
       {/* <div>
         <h2>not authorize to add category</h2>

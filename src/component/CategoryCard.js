@@ -1,21 +1,35 @@
 import React from "react";
 // import "../../src/assets/css";
 // import "../../src/assets/images";
-import { useMutation } from "@tanstack/react-query";
-import { deleteCategory } from "../api/categories";
+import { useQuery } from "@tanstack/react-query";
+// import { deleteCategory } from "../api/categories";
+import { useParams } from "react-router-dom";
+import { getCategory } from "../api/categories";
 
-const CategoryCard = ({ category }) => {
+const CategoryCard = () => {
+  const { categoryId } = useParams();
   const {
-    mutate: deleteTheCategory,
+    data: category,
     isLoading,
     error,
-  } = useMutation({
-    mutationFn: () => deleteCategory(category.id),
+  } = useQuery({
+    queryKey: ["category", categoryId],
+    queryFn: () => getCategory(categoryId),
   });
 
-  const handleDelete = () => {
-    deleteTheCategory();
-  };
+  // }
+  //   mutate: deleteTheCategory,
+  //   isLoading,
+  //   error,
+  // } = useMutation({
+  //   mutationFn: () => deleteCategory(category.id),
+  // });
+
+  // const handleDelete = () => {
+  //   deleteTheCategory();
+  // };
+  if (!category) return <div>Category Not Found!</div>;
+  const { categoryImage, categoryTitle } = category;
   return (
     <div className="card-container">
       <div className="image-container">
@@ -32,7 +46,8 @@ const CategoryCard = ({ category }) => {
           </button>
         </div>
         <div className="btn">
-          <button onClick={handleDelete}>
+          {/* <button onClick={handleDelete}> */}
+          <button>
             <a>Delete</a>
           </button>
         </div>
