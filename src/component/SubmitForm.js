@@ -14,6 +14,7 @@
 //         confirmPassword: ''
 //       })
 ////* name is var changed based on input parsed to it : once recipeTitle then recipeInstructions and so on
+
 //       const onInputChange = e => {
 //         const { name, value } = e.target;
 //         setInput(prev => ({

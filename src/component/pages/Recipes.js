@@ -12,7 +12,9 @@ const recipe = () => {
         {/* <label>Search your recipe</label> */}
         <input type="text" placeholder="Search your recipe"></input>
         <searchBar />
+        {/* // listing recipe cards */}
         <RecipeList />
+
         {/* <Modal show={show} setShow={setShow} /> */}
         <div className="btn">
           <button

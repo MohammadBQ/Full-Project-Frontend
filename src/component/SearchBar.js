@@ -32,7 +32,8 @@ const SearchBar = ({ recipe }) => {
             .map((val) => (
               <RecipeCard recipe={val} />
             ))}
-          return recipe.val;
+          {/* question */}
+          return <RecipeCard />
         </div>
       </div>
     </>
