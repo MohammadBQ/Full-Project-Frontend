@@ -29,7 +29,7 @@ const RecipeCard = ({ recipe }) => {
         </div>
         {
           <div className="card-title">
-            <h3>{recipe.recipeTitle}</h3>{" "}
+            <h3>{recipe.recipeTitle}</h3>
           </div>
         }
         <div className="card-body">

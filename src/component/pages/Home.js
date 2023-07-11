@@ -5,6 +5,7 @@ import EasySpaghettiBolognese from "../../assets/images/EasySpaghettiBolognese.j
 import AirFryerCrispyChickenBurger from "../../assets/images/AirFryerCrispyChickenBurger.jpg";
 import BakedSweetPotato from "../../assets/images/BakedSweetPotato.jpg";
 import ChickpeaFattoush from "../../assets/images/ChickpeaFattoush.jpg";
+import "../../assets/css/style.css";
 
 const Home = () => {
   return (

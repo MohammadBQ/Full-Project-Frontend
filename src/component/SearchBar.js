@@ -1,18 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import RecipeCard from "./RecipeCard";
+// import RecipeCard from "./RecipeCard";
 
-const SearchBar = () => {
+const SearchBar = ({ recipe }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
-    <div>
-      <input type="text" placeholder="Search your recipe"></input>
-
-      <select>
-        <option value="ingredients">Ingredients</option>
-      </select>
-    </div>
+    <>
+      <div className="templateContainer">
+        <div className="searchInput_Container">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search here..."
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
+        </div>
+        <div className="template_Container">
+          {recipe
+            .filter((val) => {
+              if (searchTerm === "") {
+                return val.dat;
+              } else if (
+                val.title.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .map((val) => (
+              <RecipeCard recipe={val} />
+            ))}
+          return recipe.val;
+        </div>
+      </div>
+    </>
   );
 };
-
 export default SearchBar;
-//https://www.w3schools.com/howto/howto_css_searchbar.asp
-//https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
-//https://www.w3schools.com/tags/tag_select.asp
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
