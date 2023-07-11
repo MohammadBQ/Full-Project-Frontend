@@ -1,30 +1,28 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
-
+import { addRecipe, getAllRecpies } from "../../api/Recipes";
 import ErrorMsg from "../ErrorMsg";
-import { addCategory, getCategories } from "../../api/categories";
-import { BASEURL } from "../../api";
 
-const Categories = () => {
-  const [categoryInfo, setCategoryInfo] = useState({});
+const Recipies = () => {
+  const [recipeInfo, setRecipeInfo] = useState({});
   const [added, setAdded] = useState(false);
   const [open, setOpen] = useState(false);
   const queryClient = useQueryClient();
   const {
-    data: categories,
+    data: recipes,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["categories"],
-    queryFn: () => getCategories(),
+    queryKey: ["recipes"],
+    queryFn: () => getAllRecpies(),
   });
-  const { mutate: addCategoryFun, error: addingCategoryError } = useMutation({
+  const { mutate: addRecipeFun, error: addingRecipeError } = useMutation({
     mutationFn: () => {
-      return addCategory(categoryInfo);
+      return addRecipe(recipeInfo);
     },
     onSuccess: () => {
       setAdded(true);
-      queryClient.invalidateQueries(["categories"]);
+      queryClient.invalidateQueries(["recipes"]);
       setTimeout(() => {
         setAdded(false);
         setOpen(false);
@@ -33,15 +31,11 @@ const Categories = () => {
   });
 
   const handleChange = (e) => {
-    if (e.target.files) {
-      setCategoryInfo({ ...categoryInfo, [e.target.name]: e.target.files[0] });
-    } else {
-      setCategoryInfo({ ...categoryInfo, [e.target.name]: e.target.value });
-    }
+    setRecipeInfo({ ...recipeInfo, [e.target.name]: e.target.value });
   };
   // console.log(recipe);
-  if (!categories) return <div>Not found!</div>;
-  console.log(categories);
+  if (!recipes) return <div>Not found!</div>;
+  console.log(recipes);
 
   return (
     <div className="h-screen bg-gray-900">
@@ -54,26 +48,22 @@ const Categories = () => {
           }, 100);
         }}
       >
-        Add Category
+        Add Recipe
       </button>
       <div className="mt-[100px]  flex flex-wrap items-center justify-center gap-[15px]">
-        {categories?.length > 0 ? (
-          categories?.map((category) => {
+        {recipes?.length > 0 ? (
+          recipes.map((recipe) => {
             return (
-              <div className="w-[250px] min-h-[200px] bg-gray-800 rounded-md flex flex-col items-center justify-between p-5 gap-[15px]">
-                <div> {category.name}</div>
-                <img
-                  alt={category.name}
-                  src={`${BASEURL}/${category.categoryimage}`}
-                  height={"300px"}
-                />
+              <div className="w-[250px] min-h-[100px] bg-gray-800 rounded-md flex flex-col items-center p-5">
+                <div> {recipe.name}</div>
+                <div>{recipe.instructions}</div>
               </div>
             );
           })
         ) : (
           <div>
             <div className="w-[250px] min-h-[100px] bg-gray-800 rounded-md flex flex-col items-center p-5">
-              <div> No categories added yet</div>
+              <div> No recipes added yet</div>
               <div>Please add some to view</div>
             </div>
           </div>
@@ -85,7 +75,7 @@ const Categories = () => {
               className="modal-box"
               onSubmit={(e) => {
                 e.preventDefault();
-                addCategoryFun();
+                addRecipeFun();
               }}
             >
               <button
@@ -96,7 +86,7 @@ const Categories = () => {
               >
                 ✕
               </button>
-              <h3 className="font-bold text-lg">Add Category</h3>
+              <h3 className="font-bold text-lg">Add Recipe</h3>
               <div className="flex flex-col min-h-[150px] gap-[15px]">
                 <input
                   className="input input-bordered"
@@ -105,9 +95,9 @@ const Categories = () => {
                   onChange={handleChange}
                 />
                 <input
-                  className="input input-bordered flex justify-center items-center p-2"
-                  type="file"
-                  name="categoryimage"
+                  className="input input-bordered"
+                  placeholder="instructions"
+                  name="instructions"
                   onChange={handleChange}
                 />
                 {added && (
@@ -115,7 +105,7 @@ const Categories = () => {
                     Added successfully!
                   </div>
                 )}
-                <ErrorMsg error={addingCategoryError} />
+                <ErrorMsg error={addingRecipeError} />
                 <button
                   className="btn btn-sm  btn-ghost absolute right-2 bottom-2 "
                   type="submit"
@@ -131,4 +121,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default Recipies;
