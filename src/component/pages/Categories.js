@@ -3,25 +3,26 @@ import { useQuery } from "@tanstack/react-query";
 import { categories } from "../../api/categories";
 import CategoryCard from "../CategoryCard";
 import CategoryList from "../../component/CategoryList";
-// import { Link } from "react-router-dom";
-// import Modal from "../Modal";
-import AddCategoryModal from "../AddCategoryModal";
-// import {user} from "../../api/user";
+import AddCategoryModal from "../../component/AddCategoryModal";
 
 const Categories = () => {
   // const [showModal, setShowModal] = useState(true);
-  const handleShowModal = () => {
-    setShowModal(true);
-  };
+  // const handleShowModal = () => {
+  //   setShowModal(true);
+  // };
   //   const [picture, setPicture] = useState(null);
 
   //   const onChangePicture = (e) => {
   //     console.log("picture: ", picture);
   //     setPicture(e.target.files[0]);
   //   };
-  const [showModal, setShowModal] = useState(false);
-  const onClose = () => setShowModal(false);
-  const onOpen = () => setShowModal(true);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const handleButtonClick = () => {
+    setModalOpen(false);
+  };
+  const onClose = () => setModalOpen(false);
+  const onOpen = () => setModalOpen(true);
 
   return (
     <div>
@@ -43,24 +44,22 @@ const Categories = () => {
       <input id="categoryImage" type="file" onChange={onChangePicture} /> */}
 
       <CategoryList />
-      {/* <Modal show={showModal} setShow={setShowModal} /> */}
 
       {/* {user ? ( */}
 
       <div className="btn">
-        {/* <button onClick={handleShowModal}> */}
-        <button>
+        <button
+          onClick={() => {
+            setModalOpen(true);
+          }}
+        >
           <a>Add Category</a>
         </button>
       </div>
-      {/* add category Modal */}
-      {/* <addCategoryModal show={showModal} onClose={onClose} onSave={() => {}} /> */}
-      <addCategoryModal show={showModal} onClose={onClose} onSave={() => {}} />
-      {/* ) : ( */}
-      {/* <div>
-        <h2>not authorize to add category</h2>
-      </div> */}
-      {/* )} */}
+      {/* open add category Modal */}
+      {modalOpen && (
+        <AddCategoryModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+      )}
     </div>
   );
 };
