@@ -38,7 +38,7 @@ const Recipies = () => {
   console.log(recipes);
 
   return (
-    <div className="h-screen bg-gray-900">
+    <div className="h-screen bg-gray-800">
       <button
         className="btn"
         onClick={() => {
@@ -54,7 +54,7 @@ const Recipies = () => {
         {recipes?.length > 0 ? (
           recipes.map((recipe) => {
             return (
-              <div className="w-[250px] min-h-[100px] bg-gray-800 rounded-md flex flex-col items-center p-5">
+              <div className="w-[250px] min-h-[100px] bg-white rounded-md flex flex-col items-center p-5">
                 <div> {recipe.name}</div>
                 <div>{recipe.instructions}</div>
               </div>

@@ -44,7 +44,7 @@ const Categories = () => {
   console.log(categories);
 
   return (
-    <div className="h-screen bg-gray-900">
+    <div className="h-screen bg-gray-800">
       <button
         className="btn"
         onClick={() => {
@@ -60,7 +60,7 @@ const Categories = () => {
         {categories?.length > 0 ? (
           categories?.map((category) => {
             return (
-              <div className="w-[250px] min-h-[200px] bg-gray-800 rounded-md flex flex-col items-center justify-between p-5 gap-[15px]">
+              <div className="w-[250px] min-h-[200px] bg-white rounded-md flex flex-col items-center justify-between p-5 gap-[15px]">
                 <div> {category.name}</div>
                 <img
                   alt={category.name}
