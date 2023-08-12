@@ -48,6 +48,7 @@ const AddRecipe = ({ show, onClose, onSave }) => {
   if (!show) {
     return null;
   }
+
   return (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-10">
       <div className="bg-gray-800 rounded-md shadow-md w-full max-w-md p-6 overflow-scroll max-h-[70%]">

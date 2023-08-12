@@ -137,11 +137,8 @@ const Home = () => {
             Explore our delicious recipes and satisfy your taste buds.
           </p>
           <div className="mt-8">
-            <NavLink>
-              <button
-                to="/recipes"
-                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full"
-              >
+            <NavLink to="/recipes">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
                 View Recipes
               </button>
             </NavLink>

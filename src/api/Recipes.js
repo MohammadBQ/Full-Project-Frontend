@@ -36,12 +36,8 @@ const updateRecipe = async (recipeInfo) => {
 };
 
 const deleteRecipe = async (recipeId) => {
-  try {
-    const { data } = await instance.delete(`/notes/${recipeId}`);
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+  const { data } = await instance.delete(`/recipe/delete/${recipeId}`);
+  return data;
 };
 
 export { getAllRecpies, getRecipe, addRecipe, updateRecipe, deleteRecipe };

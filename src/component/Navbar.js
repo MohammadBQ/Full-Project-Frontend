@@ -44,13 +44,13 @@ const Navbar = () => {
                 </NavLink>
 
                 {user ? (
-                  <div
+                  <button
                     onClick={handleLogout}
                     to="/"
                     className="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Signout
-                  </div>
+                  </button>
                 ) : (
                   <>
                     <NavLink

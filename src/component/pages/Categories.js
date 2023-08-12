@@ -60,7 +60,7 @@ const Categories = () => {
         {categories?.length > 0 ? (
           categories?.map((category) => {
             return (
-              <div className="w-[250px] min-h-[200px] bg-white rounded-md flex flex-col items-center justify-between p-5 gap-[15px]">
+              <div className="w-[250px] min-h-[200px] bg-white rounded-md flex flex-col items-center justify-between p-5 gap-[15px]  ">
                 <div> {category.name}</div>
                 <img
                   alt={category.name}
@@ -72,7 +72,7 @@ const Categories = () => {
           })
         ) : (
           <div>
-            <div className="w-[250px] min-h-[100px] bg-gray-800 rounded-md flex flex-col items-center p-5">
+            <div className="w-[250px] min-h-[100px] bg-gray-800 rounded-md flex flex-col items-center p-5 text-white">
               <div> No categories added yet</div>
               <div>Please add some to view</div>
             </div>
@@ -100,7 +100,7 @@ const Categories = () => {
               <div className="flex flex-col min-h-[150px] gap-[15px]">
                 <input
                   className="input input-bordered"
-                  placeholder="name"
+                  placeholder="Category Name"
                   name="name"
                   onChange={handleChange}
                 />
