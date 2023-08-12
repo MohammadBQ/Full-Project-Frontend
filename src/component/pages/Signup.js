@@ -37,14 +37,14 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-white-900 min-h-screen flex items-center justify-center absolute inset-0 z-[-1]">
-      <div className="max-w-md w-full px-6 py-8 bg-orange-800 rounded-md shadow-md">
-        <h2 className="text-3xl text-white font-semibold mb-6">Signup</h2>
+    <div className="bg-gray-800 min-h-screen flex items-center justify-center absolute inset-0 z-[-1]">
+      <div className="max-w-md w-full px-6 py-8 bg-white rounded-md shadow-md">
+        <h2 className="text-3xl text-gray-800 font-semibold mb-6">Signup</h2>
         <form onSubmit={handleFormSubmit}>
           <div className="mb-4">
             <label
               htmlFor="name"
-              className="block text-white text-sm font-medium mb-2"
+              className="block text-gray-800 text-sm font-medium mb-2"
             >
               Username
             </label>
@@ -59,7 +59,7 @@ const Signup = () => {
             />
             <label
               htmlFor="email"
-              className="block text-white text-sm font-medium mb-2"
+              className="block text-gray-800 text-sm font-medium mb-2"
             >
               Email
             </label>
@@ -76,7 +76,7 @@ const Signup = () => {
           <div className="mb-4">
             <label
               htmlFor="password"
-              className="block text-white text-sm font-medium mb-2"
+              className="block text-gray-800 text-sm font-medium mb-2"
             >
               Password
             </label>
@@ -90,7 +90,7 @@ const Signup = () => {
             />
             <label
               htmlFor="confirmpassword"
-              className="block text-white text-sm font-medium mb-2"
+              className="block text-gray-800 text-sm font-medium mb-2"
             >
               Confirm Password
             </label>
@@ -107,7 +107,7 @@ const Signup = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+              className="px-4 py-2 bg-blue-500 text-gray-800 rounded-md hover:bg-blue-600 transition-colors"
             >
               Signup
             </button>
